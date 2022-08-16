@@ -6,7 +6,7 @@
 
   let step = 15;
   let jump = 50;
-  let sit = false;
+  let isJump = false;
 
   document.addEventListener('keydown', (event) => {
     console.log(event.keyCode, event.type)
@@ -25,12 +25,18 @@
       case 40:
         a.style.top = `${a.offsetTop + step}px`;
         break;
+
       case 32:
+        if(isJump) {
+          break;
+        }
         let originalTop = a.offsetTop;
+        isJump = true;
         a.style.top = `${originalTop - jump}px`;
 
         setTimeout(() => {
           a.style.top = `${originalTop}px`;
+          isJump = false;
         }, 500)
         break;
 
