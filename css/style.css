@@ -8,5 +8,5 @@ body {
   height: 100px;
   background-color: cornflowerblue;  
   position: absolute;
-transition: .05s;
+/* transition: .05s; */
 }

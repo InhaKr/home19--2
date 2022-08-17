@@ -6,6 +6,8 @@
 
   let step = 15;
   let jump = 50;
+  let animation =500;
+  let jumpEnd = 540;
   let isJump = false;
 
   document.addEventListener('keydown', (event) => {
@@ -27,7 +29,7 @@
         break;
 
       case 32:
-        if(isJump) {
+        if (isJump) {
           break;
         }
         let originalTop = a.offsetTop;
@@ -36,8 +38,10 @@
 
         setTimeout(() => {
           a.style.top = `${originalTop}px`;
-          isJump = false;
-        }, 500)
+          setTimeout(()=> {
+            isJump = false;
+          },animation);
+        },jumpEnd)
         break;
 
       case 17:
